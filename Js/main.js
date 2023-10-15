@@ -175,7 +175,7 @@ function endGame(){
         <div class="gameOver">
         <span class="lose-span">Game Over</span>
         La bonne Reponse est <strong class="bonne-reponse">${randomValueName}</strong>
-        <p class="loss-p">Ton Temp est<span class="your-time">${60 - time} Seconds</span></p>
+        <p class="loss-p">Ton Temp est<span class="your-time">${119 - time} Seconds</span></p>
         </div>
     `;
 
@@ -215,7 +215,7 @@ function winGame(){
     <div class="win">
         <p>Félicitations vous avez gagné avec seulement <span class="wrong-tries">${wrongAttempt} Error/s</span> </p>
         <p class="level">Ton Niveau est <span class="your-level">${gameRank}</span></p>
-        <p class="win-p">Ton Temps est<span class="your-time">${ 60 - time} Seconds</span></p>
+        <p class="win-p">Ton Temps est<span class="your-time">${ 119 - time} Seconds</span></p>
     </div>
     `;
     //append the div to the body
