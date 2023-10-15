@@ -232,7 +232,7 @@ restartBtn.onclick = function() {
 
 
 function startTimer(timerBox) {
-const startingMinutes = 0.5;
+const startingMinutes = 2;
 let time = startingMinutes * 60
 let counter = setInterval(() =>{
     let min = Math.floor(time / 60 );
