@@ -93,7 +93,7 @@ let duration = 1000;
 //Handling the clicking operations
 document.addEventListener("click", (e)=>{
     //set the status of the letter guess
-
+    
     let theStatus = false;
     if(e.target.className == "letter"){
         //add class clicked to the element
@@ -175,9 +175,10 @@ function endGame(){
         <div class="gameOver">
         <span class="lose-span">Game Over</span>
         La bonne Reponse est <strong class="bonne-reponse">${randomValueName}</strong>
-        <p class="loss-p">Ton Temp est<span class="your-time">${timer.innerHTML}</span></p>
+        <p class="loss-p">Ton Temp est<span class="your-time">${60 - time} Seconds</span></p>
         </div>
     `;
+
     //Add A class to the div
     loseDiv.className = "game-lose";
     //append the div to the body
@@ -214,7 +215,7 @@ function winGame(){
     <div class="win">
         <p>Félicitations vous avez gagné avec seulement <span class="wrong-tries">${wrongAttempt} Error/s</span> </p>
         <p class="level">Ton Niveau est <span class="your-level">${gameRank}</span></p>
-        <p class="win-p">Ton Temps est<span class="your-time">${timer.innerHTML}</span></p>
+        <p class="win-p">Ton Temps est<span class="your-time">${ 60 - time} Seconds</span></p>
     </div>
     `;
     //append the div to the body
@@ -230,17 +231,18 @@ restartBtn.onclick = function() {
 
 // //Control the timer
 
-
-function startTimer(timerBox) {
-const startingMinutes = 2;
+const startingMinutes = 1;
 let time = startingMinutes * 60
+function startTimer(timerBox) {
+
+    
 let counter = setInterval(() =>{
     let min = Math.floor(time / 60 );
     let sec = time % 60 ;
     sec = sec < 1  ? '0' + sec : sec;
     time--;
 
-
+    
 
     timerBox.innerHTML = `${min}:${sec}`;
     // console.log(`${min} : ${sec}`);
