@@ -1,0 +1,469 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,600;0,700;1,500;1,700&family=Mooli&family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,400;1,700&display=swap');
+*{
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Mooli', sans-serif;
+    font-family: 'Roboto Condensed', sans-serif;
+
+    scroll-behavior: smooth;
+}
+.container{
+    margin: 20px auto;
+    width: 900px;
+}
+.row{
+    display: flex;
+}
+hr{
+    border: 1px solid #eee;
+}
+.game-info{
+    display: flex;
+    height: 50px;
+}
+.game-info .game-name{
+    flex: 1;
+    font-size: 25px;
+    font-weight: bold;
+    color: #875d1f;
+}
+.game-info .category{
+    flex: 1;
+    text-align: right;
+    font-size: 25px;
+    font-weight: bold;
+}
+.game-info .category span{
+    text-transform: capitalize;
+    color: #875d1f;;
+    font-weight: bold;
+}
+.counter{
+    position: absolute;
+    left: 50%;
+    top: 12px;
+    padding: 0 10px;
+    background-color: #009688;
+    border-radius: 50%;
+    text-align: center;
+}
+@media(max-width:676px){
+
+    .counter{
+    position :fixed;
+    }
+}
+.counter .timer{
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+    line-height: 2px;
+}
+.game-draw{
+    flex: 1;
+    padding: 20px;
+    background-color: #f8f8f8;
+    height: 324px;
+
+}
+.game-draw .the-draw{
+    width: 80px;
+    border-bottom: 4px solid #222;
+    position: relative;
+    margin: auto;
+    height: 280px;
+    left: -60px;
+    display: none;
+}
+.game-draw .the-draw.wrong-1{
+    display: inline-block;
+}
+.game-draw .the-draw .the-stand{
+    display: none;
+}
+.game-draw .the-draw .the-stand::before{
+    content: " ";
+    position: absolute;
+    background-color: #222;
+    width: 4px;
+    height: 100%;
+    left: 50%;
+    margin: -2px;
+    top: 2px;
+}
+.game-draw .the-draw .the-hang{
+    display: none;
+}
+.game-draw .the-draw .the-hang::before{
+    content: " ";
+    position: absolute;
+    background-color: #222;
+    height: 4px;
+    width: 100px;
+    left: 42px;
+    top: 10px;
+}
+.game-draw .the-draw .the-hang::after{
+    content: " ";
+    position: absolute;
+    background-color: #222;
+    width: 4px;
+    height: 30px;
+    left: 138px;
+    top: 10px;
+}
+.game-draw .the-draw .the-robe{
+    display: none;
+}
+.game-draw .the-draw .the-robe::before{
+    content: "";
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: 4px dashed #222;
+    left: 103px;
+    top: 40px;
+}
+.game-draw .the-draw .the-man .head{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 4px solid #333;
+    left: 117px;
+    top: 53px;
+    display: none;
+}
+.game-draw .the-draw .the-man .body{
+    position: absolute;
+    width: 4px;
+    height: 90px;
+    background-color: #222;
+    left: 140px;
+    top: 102px;
+    display: none;
+}
+.game-draw .the-draw .the-man .hands{
+    display: none;
+}
+.game-draw .the-draw .the-man .hands::before{
+    content: " ";
+    position: absolute;
+    width: 4px;
+    height: 55px;
+    background-color: #222;
+    transform: rotate(45deg);
+    top: 130px;
+    left: 120px;
+}
+.game-draw .the-draw .the-man .hands::after{
+    content: " ";
+    position: absolute;
+    width: 4px;
+    height: 55px;
+    background-color: #222;
+    transform: rotate(139deg);
+    top: 130px;
+    left: 158px;
+}
+.game-draw .the-draw .the-man .legs{
+    position: absolute;
+    width: 40px;
+    height: 4px;
+    background-color: #222;
+    top: 191px;
+    left: 122px;
+    display: none;
+}
+.game-draw .the-draw .the-man .legs::before{
+    content: " ";
+    position: absolute;
+    width: 4px;
+    height: 60px;
+    background-color: #222;
+}
+.game-draw .the-draw .the-man .legs::after{
+    content: " ";
+    position: absolute;
+    width: 4px;
+    height: 60px;
+    background-color: #222;
+    left: 37px;
+}
+.game-draw.wrong-1 .the-draw{
+    display: block;
+}
+.game-draw.wrong-2 .the-stand{
+    display: block;
+}
+.game-draw.wrong-3 .the-hang{
+    display: block;
+}
+.game-draw.wrong-4 .the-robe{
+    display: block;
+}
+.game-draw.wrong-5 .the-man .head{
+    display: block;
+}
+.game-draw.wrong-6 .the-man .body{
+    display: block;
+}
+.game-draw.wrong-7 .the-man .hands{
+    display: block;
+}
+.game-draw.wrong-8 .the-man .legs{
+    display: block;
+}
+.hint{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: fit-content;
+    position: absolute;
+    left: 26px;
+    bottom: 20%;
+}
+.hint .hint-p{
+    padding: 10px 20px;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 10px 0px;
+}
+.hint .hint-p .hint-btn,
+.hint .hint-p .hint-result{
+    width: fit-content;
+    padding: 10px 20px;
+    font-weight: bold;
+    background-color: #009688;
+    outline: none;
+    border: none;
+    border-radius: 8px;
+    font-size: 20px;
+    margin-left: 10px;
+    color: #fff;
+    height: 40px;
+    text-align: center;
+    line-height: 20px;
+    cursor: pointer;
+
+}
+.hint .hint-p .hint-result.show{
+    display: inline-block;
+}
+.hint .hint-p .hint-result{
+    display: none;
+}
+.letters{
+    flex: 1;
+    text-align: center;
+    padding: 15px;
+}
+.letters.finished,
+.letters .lost,
+.letters.stop-clicking{
+    pointer-events: none;
+}
+
+.letters .letter{
+    display: inline-block;
+    width: 55px;
+    height: 55px;
+    background-color: #009688;
+    text-align: center;
+    color: #fff;
+    padding: 5px 0;
+    border: 1px solid #fff;
+    border-radius: 8px;
+    line-height: 45px;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 3px 3px;
+    text-transform: uppercase;
+}
+.letters .letter.clicked{
+    background-color: #222;
+    opacity: 0.3;
+    pointer-events: none;
+}
+.letters-guess{
+    display: flex;
+    margin: 10px auto;
+    padding: 20px;
+    background-color: #f8f8f8;
+    justify-content: center;
+    min-height: 104px;
+}
+.letters-guess span{
+    width: 60px;
+    height: 60px;
+    background-color: #fdfdfd;
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-right: 10px;
+    border-bottom: 4px solid;
+    text-align: center;
+    line-height: 60px;
+    transition: 0.3s;
+}
+.letters-guess span.has-space{
+    background: none;
+    border-bottom: none;
+    position: relative;
+}
+.letters-guess span.has-space::before{
+    content: " ";
+    position: absolute;
+    width: 20px;
+    height: 4px;
+    background-color: #009688;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.game-lose{
+    display: flex;
+    flex-direction: column;
+    margin: 20px auto;
+    width: 80%;
+    background-color: #009688;
+    padding: 30px;
+    position: absolute;
+    height: 570px;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    color: #fff;
+    font-size: 30px;
+    font-weight: bold;
+}
+.game-lose .gameOver{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+    width: 100%;
+    height: 100%;
+}
+.game-lose .gameOver span{
+    display: block;
+    color: red;
+    margin: 20px 30px;
+    text-align: center;
+    position: absolute;
+    font-size: 49px;
+    top: 27px;
+}
+.game-lose .gameOver strong{
+    font-size: 50px;
+    color: blanchedalmond;
+    text-transform: uppercase;
+    margin-top: 25px;
+}
+@media(max-width:767px){
+    .game-lose{
+        width: 100%;
+        position: fixed;
+    }
+}
+.game-win{
+    position: absolute;
+    width: 80%;
+    height: 80%;
+    background-color: #009688;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    top: 10%;
+    left: 10%;
+}
+.game-win .win{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.game-win p{
+    position: absolute;
+    top: 0;
+    font-size: 36px;
+    font-weight: bold;
+    color: #fff;
+}
+.game-win .wrong-tries{
+    display: block;
+    color: darkslateblue;
+    font-size: 50px;
+    margin: 20px auto;
+    width: fit-content;
+}
+.game-win .level{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 40px;
+    font-weight: bold;
+}
+.game-win .your-level{
+    color: #ff9800;
+    font-size: 50px;
+}
+.restart{
+    position: absolute;
+    bottom: 7px;
+    padding: 10px 20px;
+    background-color: #009688;
+    color: #fff;
+    border: none;
+    outline: none;
+    border-radius: 8px;
+    font-size: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    left: 50%;
+    transform: translateX(-50%);
+}
+@media (max-width: 767px){
+    .restart{
+        bottom: 25%;
+    width: fit-content;
+    height: 80px;
+    position: fixed;
+    }
+}
+.game-win .win-p,
+.gameOver .loss-p{
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: block;
+    margin-left: 0;
+}
+.game-win .win-p .your-time,
+.gameOver .loss-p .your-time{
+    color: #ff9800;
+    font-size: 42px;
+    text-align: center;
+    display: block;
+    margin-top: 16px;
+}
+.gameOver .loss-p .your-time{
+    margin-top: 45px;
+}
+.restart:hover{
+    background-color: #006988;
+}
