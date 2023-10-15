@@ -421,6 +421,15 @@ hr{
     color: #ff9800;
     font-size: 50px;
 }
+@media(max-width:767px){
+    .game-win{
+        position: fixed;
+        height: 700px;
+        width: 100%;
+        left: 0;
+        top: 80px;
+    }
+}
 .restart{
     position: absolute;
     bottom: 7px;
@@ -439,9 +448,9 @@ hr{
 @media (max-width: 767px){
     .restart{
         bottom: 25%;
-    width: fit-content;
-    height: 80px;
-    position: fixed;
+        width: fit-content;
+        height: 80px;
+        position: fixed;
     }
 }
 .game-win .win-p,
@@ -463,6 +472,8 @@ hr{
 }
 .gameOver .loss-p .your-time{
     margin-top: 45px;
+    left: 30%;
+    transform: translateX(-50%);
 }
 .restart:hover{
     background-color: #006988;
